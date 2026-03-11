@@ -1,0 +1,7 @@
+first create a database on phpmyadmin: "apartment_system"
+
+then go to browser: "localhost/Apartment-Sales-Management-System/public/?route=login"
+
+this user name and password use for the login 
+UserName: admin
+Password: 123456
