@@ -138,13 +138,31 @@ function isOpen($routes, $currentRoute) {
                 <i class="bi bi-chevron-down float-end"></i>
             </a>
 
-            <div class="collapse <?= isOpen(['reports'], $currentRoute) ?>" id="reportsMenu">
+            <div class="collapse <?= isOpen(['reports', 'report_sales', 'report_payments', 'report_reservations'], $currentRoute) ?>" id="reportsMenu">
                 <ul class="nav flex-column ms-3">
-                    <li><a class="nav-link text-white" href="#">گزارش مالی</a></li>
-                    <li><a class="nav-link text-white" href="#">گزارش پروژه‌ها</a></li>
+
+                    <li>
+                        <a class="nav-link text-white" href="/apartment_system/public/?route=report_sales">
+                            گزارش فروش
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="nav-link text-white" href="/apartment_system/public/?route=report_payments">
+                            گزارش پرداخت‌ها
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="nav-link text-white" href="/apartment_system/public/?route=report_reservations">
+                            گزارش رزروها
+                        </a>
+                    </li>
+
                 </ul>
             </div>
         </li>
+
 
     </ul>
 </div>

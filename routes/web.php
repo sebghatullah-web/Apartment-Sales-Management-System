@@ -243,6 +243,26 @@ switch ($route) {
         (new AuthController())->logout();
         break;
 
+    case 'reports':
+        require "../app/controllers/ReportController.php";
+        (new ReportController())->index();
+        break;
+
+    case 'report_sales':
+        require "../app/controllers/ReportController.php";
+        (new ReportController())->sales();
+        break;
+
+    case 'report_payments':
+        require "../app/controllers/ReportController.php";
+        (new ReportController())->payments();
+        break;
+
+    case 'report_reservations':
+        require "../app/controllers/ReportController.php";
+        (new ReportController())->reservations();
+        break;
+
 
 
     default:

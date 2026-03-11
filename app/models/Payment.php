@@ -60,4 +60,22 @@ class Payment extends Model
         return $this->db->query($sql)->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    public function getPaymentsReport($filter)
+    {
+        $sql = "SELECT p.*, c.full_name, o.id AS ownership_id
+                FROM payments p
+                JOIN ownerships o ON p.ownership_id = o.id
+                JOIN customers c ON o.customer_id = c.id
+                WHERE 1=1";
+
+        if (!empty($filter['from'])) {
+            $sql .= " AND p.payment_date >= '{$filter['from']}'";
+        }
+        if (!empty($filter['to'])) {
+            $sql .= " AND p.payment_date <= '{$filter['to']}'";
+        }
+
+        return $this->db->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+    }
+
 }

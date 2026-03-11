@@ -85,4 +85,30 @@ class Ownership extends Model
         return $this->db->query($sql)->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    public function getSalesReport($filter)
+    {
+        $sql = "SELECT 
+            o.*, 
+            c.full_name, 
+            a.apartment_number, 
+            a.base_price AS apartment_price,
+            p.name AS project_name
+        FROM ownerships o
+        JOIN customers c ON o.customer_id = c.id
+        JOIN apartments a ON o.apartment_id = a.id
+        JOIN floors f ON a.floor_id = f.id
+        JOIN blocks b ON f.block_id = b.id
+        JOIN projects p ON b.project_id = p.id
+        WHERE 1=1";
+
+        if (!empty($filter['from'])) {
+            $sql .= " AND o.sale_date >= '{$filter['from']}'";
+        }
+        if (!empty($filter['to'])) {
+            $sql .= " AND o.sale_date <= '{$filter['to']}'";
+        }
+
+        return $this->db->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+    }
+
 }

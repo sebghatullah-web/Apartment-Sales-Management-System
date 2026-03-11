@@ -76,5 +76,22 @@ class Reservation extends Model
         return $this->db->query($sql)->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    public function getReservationsReport($filter)
+    {
+        $sql = "SELECT r.*, c.full_name, a.apartment_number
+                FROM reservations r
+                JOIN customers c ON r.customer_id = c.id
+                JOIN apartments a ON r.apartment_id = a.id
+                WHERE 1=1";
+
+        if (!empty($filter['from'])) {
+            $sql .= " AND r.created_at >= '{$filter['from']}'";
+        }
+        if (!empty($filter['to'])) {
+            $sql .= " AND r.created_at <= '{$filter['to']}'";
+        }
+
+        return $this->db->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+    }
 
 }
