@@ -17,7 +17,7 @@ class OwnershipController extends Controller
         $apartmentModel = $this->model("Apartment");
         $customerModel = $this->model("Customer");
 
-        $apartments = $apartmentModel->all();
+        $apartments = $apartmentModel->getCompletedApartments();
         $customers = $customerModel->all();
 
         $page_title = "فروش جدید";

@@ -19,6 +19,25 @@ class Apartment extends Model
         return $this->db->query($sql)->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    public function getCompletedApartments()
+    {
+        $sql = "SELECT 
+                a.*, 
+                p.name AS project_name,
+                b.name AS block_name,
+                f.floor_number
+            FROM apartments a
+            JOIN floors f ON a.floor_id = f.id
+            JOIN blocks b ON f.block_id = b.id
+            JOIN projects p ON b.project_id = p.id
+            LEFT JOIN ownerships o ON o.apartment_id = a.id
+            WHERE a.status = 'COMPLETED'
+              AND o.id IS NULL";
+
+        return $this->db->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+
     public function find($id)
     {
         $stmt = $this->db->prepare("SELECT * FROM {$this->table} WHERE id = ?");

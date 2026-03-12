@@ -24,9 +24,11 @@ class CustomerController extends Controller
 
         $data = [
             'full_name' => $_POST['full_name'],
+            'father_name' => $_POST['father_name'],
+            'passport' => $_POST['passport'],
             'phone' => $_POST['phone'],
             'email' => $_POST['email'],
-            'national_id' => $_POST['national_id'],
+            'addressc' => $_POST['addressc'],
         ];
 
         $customerModel->create($data);
@@ -59,9 +61,11 @@ class CustomerController extends Controller
 
         $data = [
             'full_name' => $_POST['full_name'],
+            'father_name' => $_POST['father_name'],
+            'passport' => $_POST['passport'],
             'phone' => $_POST['phone'],
             'email' => $_POST['email'],
-            'national_id' => $_POST['national_id'],
+            'addressc' => $_POST['addressc'],
         ];
 
         $customerModel->updateCustomer($id, $data);

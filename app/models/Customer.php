@@ -19,14 +19,16 @@ class Customer extends Model
 
     public function create($data)
     {
-        $sql = "INSERT INTO {$this->table} (full_name, phone, email, national_id)
-                VALUES (:full_name, :phone, :email, :national_id)";
+        $sql = "INSERT INTO {$this->table} (full_name, father_name, passport, phone, email, addressc)
+                VALUES (:full_name, :father_name, :passport, :phone, :email, :addresc)";
         $stmt = $this->db->prepare($sql);
         return $stmt->execute([
             ':full_name' => $data['full_name'],
+            ':father_name' => $data['father_name'],
+            ':passport' => $data['passport'],
             ':phone' => $data['phone'],
             ':email' => $data['email'],
-            ':national_id' => $data['national_id'],
+            ':addressc' => $data['addressc'],
         ]);
     }
 
@@ -34,17 +36,21 @@ class Customer extends Model
     {
         $sql = "UPDATE {$this->table}
                 SET full_name = :full_name,
+                    father_name = :father_name,
+                    passport = :passport,
                     phone = :phone,
                     email = :email,
-                    national_id = :national_id
+                    addressc = :addressc
                 WHERE id = :id";
 
         $stmt = $this->db->prepare($sql);
         return $stmt->execute([
             ':full_name' => $data['full_name'],
+            ':father_name' => $data['father_name'],
+            ':passport' => $data['passport'],
             ':phone' => $data['phone'],
             ':email' => $data['email'],
-            ':national_id' => $data['national_id'],
+            ':addressc' => $data['addressc'],
             ':id' => $id,
         ]);
     }
