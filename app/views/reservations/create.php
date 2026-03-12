@@ -22,7 +22,7 @@
             <?php foreach ($apartments as $ap): ?>
                 <?php if ($ap['status'] != 'COMPLETED'): ?>
                     <option value="<?= $ap['id'] ?>">
-                        <?= $ap['project_name'] ?> → <?= $ap['block_name'] ?> → طبقه <?= $ap['floor_number'] ?> → آپارتمان <?= $ap['apartment_number'] ?>
+                        <?= $ap['project_name'] ?> → بلاک <?= $ap['block_name'] ?> → طبقه <?= $ap['floor_number'] ?> → آپارتمان <?= $ap['apartment_number'] ?>
                     </option>
                 <?php endif; ?>
             <?php endforeach; ?>

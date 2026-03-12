@@ -21,7 +21,7 @@
             <option value="">انتخاب آپارتمان</option>
             <?php foreach ($apartments as $ap): ?>
                 <option value="<?= $ap['id'] ?>">
-                    <?= $ap['project_name'] ?> → <?= $ap['block_name'] ?> → طبقه <?= $ap['floor_number'] ?> → آپارتمان <?= $ap['apartment_number'] ?>
+                    <?= $ap['project_name'] ?> → بلاک <?= $ap['block_name'] ?> → طبقه <?= $ap['floor_number'] ?> → آپارتمان <?= $ap['apartment_number'] ?> → قیمت: <?= $ap['base_price'] ?>
                 </option>
             <?php endforeach; ?>
         </select>

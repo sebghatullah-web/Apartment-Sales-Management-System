@@ -11,7 +11,7 @@
             <option value="">انتخاب طبقه</option>
             <?php foreach ($floors as $floor): ?>
                 <option value="<?= $floor['id'] ?>">
-                    <?= $floor['project_name'] ?> → <?= $floor['block_name'] ?> → طبقه <?= $floor['floor_number'] ?>
+                    <?= $floor['project_name'] ?> → بلاک <?= $floor['block_name'] ?> → طبقه <?= $floor['floor_number'] ?>
                 </option>
             <?php endforeach; ?>
         </select>

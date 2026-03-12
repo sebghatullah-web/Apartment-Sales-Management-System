@@ -27,7 +27,7 @@
             <td><?= $p['method'] ?></td>
             <td>
                 <a href="/apartment_system/public/?route=payments_invoice&ownership_id=<?= $p['ownership_id'] ?>" 
-                   class="btn btn-sm btn-secondary">مشاهده فاکتور</a>
+                   class="btn btn-sm btn-secondary" target="_blank">مشاهده فاکتور</a>
             </td>
         </tr>
     <?php endforeach; ?>
