@@ -8,7 +8,7 @@ class ApartmentController extends Controller
         $floorModel = $this->model("Floor");
 
         $apartments = $apartmentModel->all();
-        $floors = $floorModel->all();
+        $floors = $floorModel->getFloorsWithAvailableApartments();
 
         $page_title = "لیست آپارتمان‌ها";
 

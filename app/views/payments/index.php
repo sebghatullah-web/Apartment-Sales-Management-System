@@ -6,7 +6,8 @@
     <a href="/apartment_system/public/?route=payments_create" class="btn btn-primary">پرداخت جدید</a>
 </div>
 
-<table class="table table-bordered">
+<div class="table-container">
+    <table id="payments-table" class="table table-bordered">
     <thead>
         <tr>
             <th>مشتری</th>

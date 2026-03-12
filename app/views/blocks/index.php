@@ -6,7 +6,8 @@
     <a href="/apartment_system/public/?route=blocks_create" class="btn btn-primary">بلاک جدید</a>
 </div>
 
-<table class="table table-bordered table-striped">
+<div class="table-container">
+    <table id="blocks-table" class="table table-bordered table-striped">
     <thead>
         <tr>
             <th>شناسه</th>

@@ -14,6 +14,25 @@ class Floor extends Model
 
         return $this->db->query($sql)->fetchAll(PDO::FETCH_ASSOC);
     }
+    public function getFloorsWithAvailableApartments()
+    {
+        $sql = "
+            SELECT 
+                f.*, 
+                b.name AS block_name,
+                p.name AS project_name,
+                COUNT(a.id) AS built_apartments
+            FROM floors f
+            JOIN blocks b ON f.block_id = b.id
+            JOIN projects p ON b.project_id = p.id
+            LEFT JOIN apartments a ON a.floor_id = f.id
+            GROUP BY f.id
+            HAVING built_apartments < f.apartments_count
+        ";
+
+        return $this->db->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+    }
+
 
     public function find($id)
     {

@@ -23,7 +23,8 @@
     </div>
 </form>
 
-<table class="table table-bordered">
+<div class="table-container">
+    <table id="payments-report-table" class="table table-bordered">
     <thead>
         <tr>
             <th>Customer</th>

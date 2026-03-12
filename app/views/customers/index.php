@@ -6,7 +6,8 @@
     <a href="/apartment_system/public/?route=customers_create" class="btn btn-primary">مشتری جدید</a>
 </div>
 
-<table class="table table-bordered table-striped">
+<div class="table-container">
+    <table id="customers-table" class="table table-bordered table-striped">
     <thead>
         <tr>
             <th>نام</th>

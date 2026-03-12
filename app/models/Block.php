@@ -13,6 +13,23 @@ class Block extends Model
         return $this->db->query($sql)->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    public function getBlocksWithAvailableFloors()
+    {
+        $sql = "
+            SELECT 
+                b.*, 
+                p.name AS project_name,
+                COUNT(f.id) AS built_floors
+            FROM blocks b
+            JOIN projects p ON b.project_id = p.id
+            LEFT JOIN floors f ON f.block_id = b.id
+            GROUP BY b.id
+            HAVING built_floors < b.floors_count
+        ";
+
+        return $this->db->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+    }
+
     public function find($id)
     {
         $stmt = $this->db->prepare("SELECT * FROM {$this->table} WHERE id = ?");

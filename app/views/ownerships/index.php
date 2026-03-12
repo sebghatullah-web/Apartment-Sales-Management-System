@@ -6,7 +6,8 @@
     <a href="/apartment_system/public/?route=ownerships_create" class="btn btn-primary">فروش جدید</a>
 </div>
 
-<table class="table table-bordered table-striped">
+<div class="table-container">
+    <table id="ownerships-table" class="table table-bordered table-striped">
     <thead>
         <tr>
             <th>مشتری</th>

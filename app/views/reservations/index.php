@@ -6,7 +6,8 @@
     <a href="/apartment_system/public/?route=reservations_create" class="btn btn-primary">رزرو جدید</a>
 </div>
 
-<table class="table table-bordered table-striped">
+<div class="table-container">
+    <table id="reservations-table" class="table table-bordered table-striped">
     <thead>
         <tr>
             <th>مشتری</th>

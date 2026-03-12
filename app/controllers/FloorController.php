@@ -18,7 +18,7 @@ class FloorController extends Controller
     public function create()
     {
         $blockModel = $this->model("Block");
-        $blocks = $blockModel->all();
+        $blocks = $blockModel->getBlocksWithAvailableFloors();
 
         $page_title = "ایجاد طبقه جدید";
 

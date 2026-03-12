@@ -6,7 +6,8 @@
     <a href="/apartment_system/public/?route=floors_create" class="btn btn-primary">طبقه جدید</a>
 </div>
 
-<table class="table table-bordered table-striped">
+<div class="table-container">
+    <table id="floors-table" class="table table-bordered table-striped">
     <thead>
         <tr>
             <th>شناسه</th>

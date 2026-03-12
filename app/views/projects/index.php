@@ -6,7 +6,8 @@
     <a href="/apartment_system/public/?route=projects_create" class="btn btn-primary">پروژه جدید</a>
 </div>
 
-<table class="table table-bordered table-striped">
+<div class="table-container">
+    <table id="projects-table" class="table table-bordered table-striped">
     <thead>
         <tr>
             <th>شناسه</th>

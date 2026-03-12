@@ -6,7 +6,8 @@
     <a href="/apartment_system/public/?route=apartments_create" class="btn btn-primary">آپارتمان جدید</a>
 </div>
 
-<table class="table table-bordered table-striped">
+<div class="table-container">
+    <table id="apartments-table" class="table table-bordered table-striped">
     <thead>
         <tr>
             <th>شماره</th>
